@@ -76,13 +76,6 @@ nav > ul > li > a {
   font-size: medium;
   color: white
 }
-.search-btn {
-  background-color: rgb(233, 85, 85);
-  color: white;
-  border-radius: 3px;
-  border: none;
-  /* scale: 1.2; */
-}
 
 /* Notice that each form input is wrapped in a div */
 /* Create a block that targets the input-field class and apply a suitable width and margin */
@@ -90,11 +83,16 @@ nav > ul > li > a {
 /* Styling the elements of Forms is difficult. */
 /* Hint: https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling */
 
-input {height: 2rem;
+input {
+  height: 2rem;
+  width: 10rem;
   /* Style the form input elements using width, height, padding-left and border-radius */
 }
 
 .nice-select {
+  height: 100rem;
+  width: 10rem;
+  font-size: large;
   /* Select elements are not imput elements! Therefore we've given the <select> element it's own class  */
   /* They are notoriously difficult to style with css */
   /* In this case you can use width, height, font-size, color, border and border-radius */
@@ -113,44 +111,73 @@ input {height: 2rem;
   - border-radius
   - cursor
   */
+  background-color: rgb(233, 85, 85);
+  color: white;
+  border-radius: 3px;
+  font-size: large;
+  border: none;
+  scale: 1.2;
 }
 
-.container {
+.container{
   /* The destinations are enclosed in an article element that we want to make a grid */
   /* Set the display property to 'grid' and justify the content */
+  display: grid;
+  grid-template-areas: 
+  'header header header'
+  'menu main main'
+  'footer footer footer';
+  grid-template-areas: 3fr 3fr 3fr;
+  justify-content: center;
 }
+
 
 .row {
   /* The row of the grid has 3 columns which should be the same width and roughly a third of the available space */
   /* Use the grid-template-columns property to set each column to 30% */
   /* You can experiment with different units for the width values */
   /* Hint: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns */
+  /* grid-template-columns: 30%, 30%, 30%; */
+  grid-area: menu;
 }
 
 .section-title {
+  display: flex;
+  justify-content: center;
+  /* grid-area: header; */
   /* The <div> with class section-title contains an <h3> child which we want to center */
   /* The easiest way to center child elements is to set the display property to 'flex' and justify the content */
 }
 
 .single-destination {
+  /* grid-area: main; */
+  margin: 25px;
   /* Use the margin property to make some space between the destinations */
+  overflow: hidden;
   /* Set the overflow to 'hidden' */
   /* The overflow CSS shorthand property sets the desired behaviour for an element's overflow 
     — i.e. when an element's content is too big to fit. In this case, the image is too big too fit. */
 }
 
 img {
+  /* grid-area: main */
   /* Set the max-width property to 100% */
+  max-width: 100%;
+  grid-area: footer;
 }
 
 /* Let's take the training wheels off. Finish off the page by adding styles to the remaining blocks */
 
 .testimonial-area {
-  /* Write your code here */
+  display: grid;
+  grid-template-areas: 
+  'header header'
+  'menu main'
+  'footer footer';
 }
 
 .single-testmonial{
-  /* Write your code here */
+  grid-area: menu;
 }
 
 .footer {
