@@ -151,6 +151,7 @@ input {
 
 .single-destination {
   /* grid-area: main; */
+  float: left;
   margin: 25px;
   /* Use the margin property to make some space between the destinations */
   overflow: hidden;
@@ -169,15 +170,16 @@ img {
 /* Let's take the training wheels off. Finish off the page by adding styles to the remaining blocks */
 
 .testimonial-area {
-  display: grid;
-  grid-template-areas: 
-  'header header'
-  'menu main'
-  'footer footer';
+  background-color: rgb(56, 63, 79);
 }
 
+.testimonial-area > .container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  gap: 50px;
+}
 .single-testmonial{
-  grid-area: menu;
 }
 
 .footer {
